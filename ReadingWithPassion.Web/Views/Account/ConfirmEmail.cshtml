@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.title = "ConfirmEmail";
+}
+
+<h1>Confirm Email</h1>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5>
+                    @ViewBag.message
+                </h5>
+                @if (!string.IsNullOrEmpty(ViewBag.userId))
+                {
+                    <form asp-controller="Account" asp-action="SendConfirmationEmail" method="post">
+                        <button type="submit" class="btn btn-primary" style="width:auto" name="userId" value="@ViewBag.userId">Send Confirmation Email</button>
+                    </form>
+                }
+            </div>
+        </div>
+        </div>
+</div>
